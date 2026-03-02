@@ -30,10 +30,6 @@ class RestProductAttributeResponseBuilder implements RestProductAttributeRespons
      */
     protected $productAttributeMapper;
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResourceBuilderInterface $restResourceBuilder
-     * @param \Spryker\Glue\ProductAttributesRestApi\Processor\Mapper\ProductAttributeMapperInterface $productAttributeMapper
-     */
     public function __construct(
         RestResourceBuilderInterface $restResourceBuilder,
         ProductAttributeMapperInterface $productAttributeMapper
@@ -42,12 +38,6 @@ class RestProductAttributeResponseBuilder implements RestProductAttributeRespons
         $this->productAttributeMapper = $productAttributeMapper;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductManagementAttributeFilterTransfer $productManagementAttributeFilterTransfer
-     * @param \Generated\Shared\Transfer\ProductManagementAttributeCollectionTransfer $productManagementAttributeCollectionTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductAttributeListRestResponse(
         ProductManagementAttributeFilterTransfer $productManagementAttributeFilterTransfer,
         ProductManagementAttributeCollectionTransfer $productManagementAttributeCollectionTransfer
@@ -78,11 +68,6 @@ class RestProductAttributeResponseBuilder implements RestProductAttributeRespons
         return $restResponse;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductManagementAttributeTransfer $productManagementAttributeTransfer
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductAttributeRestResponse(ProductManagementAttributeTransfer $productManagementAttributeTransfer): RestResponseInterface
     {
         $restProductManagementAttributeAttributesTransfer = $this->productAttributeMapper
@@ -104,9 +89,6 @@ class RestProductAttributeResponseBuilder implements RestProductAttributeRespons
         return $restResponse;
     }
 
-    /**
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function createProductAttributeNotFoundErrorResponse(): RestResponseInterface
     {
         $restErrorMessageTransfer = (new RestErrorMessageTransfer())

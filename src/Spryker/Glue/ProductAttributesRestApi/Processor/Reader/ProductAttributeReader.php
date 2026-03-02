@@ -26,10 +26,6 @@ class ProductAttributeReader implements ProductAttributeReaderInterface
      */
     protected $restProductAttributeResponseBuilder;
 
-    /**
-     * @param \Spryker\Glue\ProductAttributesRestApi\Dependency\Client\ProductAttributesRestApiToProductAttributeClientInterface $productAttributeClient
-     * @param \Spryker\Glue\ProductAttributesRestApi\Processor\Builder\RestProductAttributeResponseBuilderInterface $restProductAttributeResponseBuilder
-     */
     public function __construct(
         ProductAttributesRestApiToProductAttributeClientInterface $productAttributeClient,
         RestProductAttributeResponseBuilderInterface $restProductAttributeResponseBuilder
@@ -38,11 +34,6 @@ class ProductAttributeReader implements ProductAttributeReaderInterface
         $this->productAttributeClient = $productAttributeClient;
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     public function getProductAttributes(RestRequestInterface $restRequest): RestResponseInterface
     {
         if ($restRequest->getResource()->getId()) {
@@ -52,11 +43,6 @@ class ProductAttributeReader implements ProductAttributeReaderInterface
         return $this->getProductAttributesList($restRequest);
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     protected function getProductAttributesList(RestRequestInterface $restRequest): RestResponseInterface
     {
         $productManagementAttributeFilterTransfer = $this->createProductManagementAttributeFilter($restRequest);
@@ -69,11 +55,6 @@ class ProductAttributeReader implements ProductAttributeReaderInterface
         );
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Spryker\Glue\GlueApplication\Rest\JsonApi\RestResponseInterface
-     */
     protected function getProductAttributesById(RestRequestInterface $restRequest): RestResponseInterface
     {
         $productManagementAttributeFilterTransfer = $this->createProductManagementAttributeFilter($restRequest)
@@ -92,11 +73,6 @@ class ProductAttributeReader implements ProductAttributeReaderInterface
         return $this->restProductAttributeResponseBuilder->createProductAttributeRestResponse($productManagementAttributeTransfer);
     }
 
-    /**
-     * @param \Spryker\Glue\GlueApplication\Rest\Request\Data\RestRequestInterface $restRequest
-     *
-     * @return \Generated\Shared\Transfer\ProductManagementAttributeFilterTransfer
-     */
     protected function createProductManagementAttributeFilter(RestRequestInterface $restRequest): ProductManagementAttributeFilterTransfer
     {
         $filterTransfer = new FilterTransfer();

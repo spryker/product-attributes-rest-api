@@ -12,20 +12,10 @@ use Generated\Shared\Transfer\ConcreteProductsRestAttributesTransfer;
 
 interface MultiSelectAttributeFormatterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\AbstractProductsRestAttributesTransfer $abstractProductsRestAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\AbstractProductsRestAttributesTransfer
-     */
     public function formatAbstractMultiSelectAttributesToString(
         AbstractProductsRestAttributesTransfer $abstractProductsRestAttributesTransfer
     ): AbstractProductsRestAttributesTransfer;
 
-    /**
-     * @param \Generated\Shared\Transfer\ConcreteProductsRestAttributesTransfer $concreteProductsRestAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\ConcreteProductsRestAttributesTransfer
-     */
     public function formatConcreteMultiSelectAttributesToString(
         ConcreteProductsRestAttributesTransfer $concreteProductsRestAttributesTransfer
     ): ConcreteProductsRestAttributesTransfer;

@@ -14,12 +14,6 @@ use Generated\Shared\Transfer\RestProductManagementAttributeAttributesTransfer;
 
 class ProductAttributeMapper implements ProductAttributeMapperInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\ProductManagementAttributeTransfer $productManagementAttributeTransfer
-     * @param \Generated\Shared\Transfer\RestProductManagementAttributeAttributesTransfer $restProductManagementAttributeAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\RestProductManagementAttributeAttributesTransfer
-     */
     public function mapProductManagementAttributeToRestProductManagementAttributes(
         ProductManagementAttributeTransfer $productManagementAttributeTransfer,
         RestProductManagementAttributeAttributesTransfer $restProductManagementAttributeAttributesTransfer

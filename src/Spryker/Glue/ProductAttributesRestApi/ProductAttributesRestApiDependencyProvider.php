@@ -21,11 +21,6 @@ class ProductAttributesRestApiDependencyProvider extends AbstractBundleDependenc
      */
     public const CLIENT_PRODUCT_ATTRIBUTE = 'CLIENT_PRODUCT_ATTRIBUTE';
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     public function provideDependencies(Container $container): Container
     {
         $container = parent::provideDependencies($container);
@@ -35,11 +30,6 @@ class ProductAttributesRestApiDependencyProvider extends AbstractBundleDependenc
         return $container;
     }
 
-    /**
-     * @param \Spryker\Glue\Kernel\Container $container
-     *
-     * @return \Spryker\Glue\Kernel\Container
-     */
     protected function addProductAttributeClient(Container $container): Container
     {
         $container->set(static::CLIENT_PRODUCT_ATTRIBUTE, function (Container $container) {

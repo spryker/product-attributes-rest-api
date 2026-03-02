@@ -25,11 +25,6 @@ class ProductAttributesRestApiToProductAttributeClientBridge implements ProductA
         $this->productAttributeClient = $productAttributeClient;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ProductManagementAttributeFilterTransfer $productManagementAttributeFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\ProductManagementAttributeCollectionTransfer
-     */
     public function getProductManagementAttributes(
         ProductManagementAttributeFilterTransfer $productManagementAttributeFilterTransfer
     ): ProductManagementAttributeCollectionTransfer {

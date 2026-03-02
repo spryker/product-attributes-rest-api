@@ -23,9 +23,6 @@ use Spryker\Glue\ProductAttributesRestApi\Processor\Reader\ProductAttributeReade
  */
 class ProductAttributesRestApiFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Glue\ProductAttributesRestApi\Processor\Reader\ProductAttributeReaderInterface
-     */
     public function createProductAttributeReader(): ProductAttributeReaderInterface
     {
         return new ProductAttributeReader(
@@ -34,9 +31,6 @@ class ProductAttributesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ProductAttributesRestApi\Processor\Builder\RestProductAttributeResponseBuilderInterface
-     */
     public function createRestProductAttributeResponseBuilder(): RestProductAttributeResponseBuilderInterface
     {
         return new RestProductAttributeResponseBuilder(
@@ -45,25 +39,16 @@ class ProductAttributesRestApiFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Glue\ProductAttributesRestApi\Processor\Mapper\ProductAttributeMapperInterface
-     */
     public function createProductAttributeMapper(): ProductAttributeMapperInterface
     {
         return new ProductAttributeMapper();
     }
 
-    /**
-     * @return \Spryker\Glue\ProductAttributesRestApi\Processor\Formatter\MultiSelectAttributeFormatterInterface
-     */
     public function createMultiSelectAttributeFormatter(): MultiSelectAttributeFormatterInterface
     {
         return new MultiSelectAttributeFormatter();
     }
 
-    /**
-     * @return \Spryker\Glue\ProductAttributesRestApi\Dependency\Client\ProductAttributesRestApiToProductAttributeClientInterface
-     */
     public function getProductAttributeClient(): ProductAttributesRestApiToProductAttributeClientInterface
     {
         return $this->getProvidedDependency(ProductAttributesRestApiDependencyProvider::CLIENT_PRODUCT_ATTRIBUTE);

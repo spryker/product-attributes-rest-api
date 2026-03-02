@@ -12,11 +12,6 @@ use Generated\Shared\Transfer\ConcreteProductsRestAttributesTransfer;
 
 class MultiSelectAttributeFormatter implements MultiSelectAttributeFormatterInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\AbstractProductsRestAttributesTransfer $abstractProductsRestAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\AbstractProductsRestAttributesTransfer
-     */
     public function formatAbstractMultiSelectAttributesToString(
         AbstractProductsRestAttributesTransfer $abstractProductsRestAttributesTransfer
     ): AbstractProductsRestAttributesTransfer {
@@ -29,11 +24,6 @@ class MultiSelectAttributeFormatter implements MultiSelectAttributeFormatterInte
         return $abstractProductsRestAttributesTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\ConcreteProductsRestAttributesTransfer $concreteProductsRestAttributesTransfer
-     *
-     * @return \Generated\Shared\Transfer\ConcreteProductsRestAttributesTransfer
-     */
     public function formatConcreteMultiSelectAttributesToString(
         ConcreteProductsRestAttributesTransfer $concreteProductsRestAttributesTransfer
     ): ConcreteProductsRestAttributesTransfer {
