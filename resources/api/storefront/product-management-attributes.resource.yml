@@ -1,0 +1,76 @@
+resource:
+    name: ProductManagementAttributes
+    shortName: product-management-attributes
+    description: 'Product management attributes retrieval'
+
+    provider: Spryker\Glue\ProductAttributesRestApi\Api\Storefront\Provider\ProductManagementAttributesStorefrontProvider
+
+    paginationEnabled: true
+    paginationClientEnabled: true
+    paginationItemsPerPage: 100
+    paginationMaximumItemsPerPage: 100
+
+    operations:
+        - type: Get
+          name: getProductManagementAttribute
+          description: 'Retrieve a product management attribute by key'
+        - type: GetCollection
+          name: getProductManagementAttributes
+          description: 'Retrieve all product management attributes'
+
+    properties:
+        attributeKey:
+            type: string
+            identifier: true
+            writable: false
+            readable: true
+            required: false
+            description: 'Attribute key identifier'
+            openapiContext:
+                example: 'color'
+
+        key:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Attribute key'
+            openapiContext:
+                example: 'color'
+
+        inputType:
+            type: string
+            writable: false
+            readable: true
+            required: false
+            description: 'Input type for the attribute'
+            openapiContext:
+                example: 'text'
+
+        isSuper:
+            type: boolean
+            writable: false
+            readable: true
+            required: false
+            description: 'Whether this is a super attribute used for product variants'
+
+        allowInput:
+            type: boolean
+            writable: false
+            readable: true
+            required: false
+            description: 'Whether free-form custom input is allowed for this attribute'
+
+        localizedKeys:
+            type: array
+            writable: false
+            readable: true
+            required: false
+            description: 'Localized translations of the attribute key per locale'
+
+        values:
+            type: array
+            writable: false
+            readable: true
+            required: false
+            description: 'Predefined values for the attribute, each with localized translations'
