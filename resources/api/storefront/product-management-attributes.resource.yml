@@ -14,9 +14,22 @@ resource:
         - type: Get
           name: getProductManagementAttribute
           description: 'Retrieve a product management attribute by key'
+          openapiContext:
+              summary: 'Get a product management attribute'
+              responses:
+                  200:
+                      description: 'Product management attribute returned.'
+                  404:
+                      description: 'Product management attribute is not found (code 4201).'
+
         - type: GetCollection
           name: getProductManagementAttributes
           description: 'Retrieve all product management attributes'
+          openapiContext:
+              summary: 'Get all product management attributes'
+              responses:
+                  200:
+                      description: 'Product management attributes returned.'
 
     properties:
         attributeKey:
